@@ -2,42 +2,192 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sample Personal Website</title>
+  <title>Cate G. | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
 
+  <!-- Skip link (good for accessibility, style later) -->
+  <a href="#main">Skip to main content</a>
+
+  <!-- Site Navigation -->
   <header>
-    <h1>Welcome to My Website</h1>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="accessible-design.html">Accessible Design</a></li>
+        <li><a href="resources.html">Accessibility Resources</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
+  <!-- Main Content -->
+  <main id="main">
 
-    <section>
-      <h2>About Me</h2>
-      <p>
-        Hello! My name is Cate. I am interested in learning more about
-        web development and building simple, accessible websites. This page is
-        a sample project to practice HTML structure.
-      </p>
+    <!-- Intro Section -->
+    <section id="about">
+      <div>
+        <h1>Hello, I am Cate.</h1>
+
+        <p>
+          I am a Master of Library and Information Science student at UCLA and
+          the Program Coordinator at the UCLA Center for European and Russian
+          Studies. My research interests include accessible design, assistive
+          technology, and health information seeking behavior as it relates to
+          disability (especially visual impairment), reproductive health and
+          pregnancy.
+        </p>
+
+        <p>
+          I am a voting staff member on the UCLA Committee on Disability (UCOD),
+          a Kaleidoscope Scholar (Association of Research Libraries), and the
+          2025 Marjorie S. Mardellis Fellow (American Library Association).
+        </p>
+
+        <p>
+          I am in the process of building this website to meet the
+          <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">WCAG 2.2 Web Content Accessibility Guidelines</a>,
+          and you can find several resources related to digital accessibility
+          on this website.
+        </p>
+      </div>
+
+      <!-- Profile Image -->
+      <figure>
+        <img src="images/profile.jpg" alt="Portrait of Cate smiling outdoors">
+      </figure>
     </section>
 
-    <section>
-      <h2>My Photo</h2>
-      <img src="profile.jpg" alt="A photo of me">
+    <!-- Experience -->
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <ul>
+        <li>
+          <span>2023 – Now</span>
+          <strong>Program Coordinator</strong>, UCLA Center for European and Russian Studies<br>
+          <span>Los Angeles, CA</span>
+        </li>
+
+        <li>
+          <span>2020 – 2023</span>
+          <strong>Office Manager</strong>, Elite Educational Institution<br>
+          <span>Westwood, CA</span>
+        </li>
+
+        <li>
+          <span>2019 – 2020</span>
+          <strong>Student Assistant</strong>, UCSB Library<br>
+          <span>Santa Barbara, CA</span>
+        </li>
+      </ul>
     </section>
 
-    <section>
-      <h2>Personal Website</h2>
-      <p>
-        Visit my personal website here:
-        <a href="https://www.categvon.weebly.com">https://www.categvon.weebly.com</a>
-      </p>
+    <!-- Awards -->
+    <section id="awards">
+      <h2>Awards</h2>
+
+      <ul>
+        <li>
+          <span>2025 – 2026</span>
+          <strong>Marjorie S. Mardellis Fellowship</strong>, American Library Association
+        </li>
+
+        <li>
+          <span>2025 – 2027</span>
+          <strong>Kaleidoscope Scholar</strong>, Association of Research Libraries
+        </li>
+
+        <li>
+          <span>2022</span>
+          Gold, 23rd Annual National Post-Secondary Russian Essay Contest,
+          American Council of Teachers of Russian
+        </li>
+
+        <li>
+          <span>2021</span>
+          Slavic Department Award for Outstanding Service,
+          UCSB Germanic and Slavic Studies
+        </li>
+
+        <li>
+          <span>2021</span>
+          Post-Secondary Russian Scholar Laureate Award,
+          American Council of Teachers of Russian
+        </li>
+      </ul>
+    </section>
+
+    <!-- University & Public Service -->
+    <section id="service">
+      <h2>University &amp; Public Service</h2>
+
+      <ul>
+        <li>
+          <span>2025 – 2027</span>
+          Voting Member, UCLA Committee on Disability
+        </li>
+
+        <li>
+          <span>2025</span>
+          Library Circulation &amp; Outreach Volunteer,
+          Braille Institute of Los Angeles
+        </li>
+
+        <li>
+          <span>2019</span>
+          Undergraduate Representative, J.E.D.I Board,
+          UCSB Germanic and Slavic Studies Department
+        </li>
+      </ul>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <h2>Education</h2>
+
+      <ul>
+        <li>
+          <span>Expected 2027</span>
+          <strong>MLIS, Master of Library and Information Science</strong>,
+          University of California, Los Angeles<br>
+          Concentration: Informatics
+        </li>
+
+        <li>
+          <span>2023</span>
+          <strong>B.A. Russian Studies</strong>,
+          University of California, Los Angeles<br>
+          Graduated summa cum laude; minors in History and Asian Languages,
+          Departmental Honors, Dean’s Honors, Latin Honors
+        </li>
+      </ul>
+    </section>
+
+    <!-- Call-to-Action Links -->
+    <section aria-label="Featured links">
+      <article>
+        <h3><a href="accessible-design.html">Accessible Design</a></h3>
+        <p>
+          Read about the accessibility standards that I have implemented on this website.
+        </p>
+      </article>
+
+      <article>
+        <h3><a href="cv.html">CV</a></h3>
+        <p>
+          View an abridged record of my professional activity.
+        </p>
+      </article>
     </section>
 
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2026 Your Name</p>
+    <p>© Cate G.</p>
   </footer>
 
 </body>
