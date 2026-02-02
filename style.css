@@ -425,4 +425,68 @@ footer {
   opacity: 1;
   pointer-events: all;
 }
+/* =========================
+   FULL CV LINK
+========================= */
+
+.full-cv-link {
+  margin-top: 1.5rem;
+  font-style: italic;
+}
+
+/* =========================
+   TOOLKITS
+========================= */
+
+#toolkits {
+  margin-top: 4rem;
+}
+
+.toolkit-item {
+  margin-bottom: 3rem;
+}
+
+.toolkit-content {
+  max-width: 960px;
+}
+
+.toolkit-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Reuse experience gallery sizing */
+#toolkits .experience-gallery {
+  margin-top: 1rem;
+}
+
+/* =========================
+   BUTTON TOOLKIT
+========================= */
+
+.button-demo {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.button-demo button {
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid #000;
+  background: #fff;
+  cursor: default;
+}
+
+/* Code block styling */
+.code-block {
+  background: #f4f4f4;
+  padding: 1rem;
+  font-size: 0.8rem;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
 
