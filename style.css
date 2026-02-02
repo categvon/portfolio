@@ -345,3 +345,77 @@ footer {
     grid-column: span 1;
   }
 }
+/* --- Campaign Preview Gallery --- */
+
+.preview-gallery {
+  margin-top: 4rem;
+}
+
+/* Preview display */
+.preview-display {
+  position: relative;
+  min-height: 400px;
+  margin-bottom: 2rem;
+}
+
+.preview-item {
+  display: none;
+  max-width: 900px;
+}
+
+.preview-item img {
+  width: 100%;
+  height: auto;
+  border: 2px solid #000;
+}
+
+.preview-item p {
+  margin-top: 0.75rem;
+  max-width: 600px;
+}
+
+/* Show preview when targeted */
+.preview-item:target {
+  display: block;
+}
+
+/* Thumbnail row */
+.thumbnail-row {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 2px solid #000;
+  padding-top: 1.5rem;
+}
+
+.thumbnail-row a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #000;
+  padding-bottom: 0.25rem;
+}
+
+.thumbnail-row a:hover,
+.thumbnail-row a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Mobile fallback */
+@media (max-width: 700px) {
+  .preview-display {
+    min-height: auto;
+  }
+
+  .preview-item {
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .thumbnail-row {
+    display: none;
+  }
+}
+
