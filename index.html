@@ -14,7 +14,7 @@
 
   <!-- Header / Navigation -->
   <header>
-    <nav aria-label="Primary">
+    <nav aria-label="Primary navigation">
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#cv">CV</a></li>
@@ -62,39 +62,47 @@
 
       <div class="resume">
 
-    <div class="resume-item">
-  <div class="resume-date">2023 – Now</div>
+        <!-- Program Coordinator -->
+        <div class="resume-item">
+          <div class="resume-date">2023 – Now</div>
 
-  <div>
-    <div class="resume-role">Program Coordinator</div>
-    <div class="resume-org">UCLA Center for European and Russian Studies</div>
-    <div class="resume-location">Los Angeles, CA</div>
+          <div>
+            <div class="resume-role">Program Coordinator</div>
+            <div class="resume-org">
+              <a href="https://www.international.ucla.edu/Euro/" target="_blank" rel="noopener">
+                UCLA Center for European and Russian Studies
+              </a>
+            </div>
+            <div class="resume-location">Los Angeles, CA</div>
 
-    <!-- Experience Visuals -->
-    <div class="experience-gallery" aria-label="Visual examples of work at UCLA Center for European and Russian Studies">
-      <figure>
-        <img src="cvimages/cers1.png" alt="Design work sample from UCLA Center for European and Russian Studies">
-      </figure>
-      <figure>
-        <img src="cvimages/cers2.png" alt="Social media or digital campaign sample from UCLA Center for European and Russian Studies">
-      </figure>
-      <figure>
-        <img src="cvimages/cers3.png" alt="Web or promotional design sample from UCLA Center for European and Russian Studies">
-      </figure>
-      <figure>
-        <img src="cvimages/cers4.png" alt="Marketing or branding visual from UCLA Center for European and Russian Studies">
-      </figure>
-      <figure>
-        <img src="cvimages/cers5.png" alt="Additional design work sample from UCLA Center for European and Russian Studies">
-      </figure>
-    </div>
-  </div>
-</div>
+            <!-- Experience Visuals -->
+            <div class="experience-gallery" aria-label="Visual examples of work at UCLA Center for European and Russian Studies">
+              <figure>
+                <img src="cvimages/cers1.png" alt="Design work sample from UCLA Center for European and Russian Studies" class="expandable">
+              </figure>
+              <figure>
+                <img src="cvimages/cers2.png" alt="Social media or digital campaign sample from UCLA Center for European and Russian Studies" class="expandable">
+              </figure>
+              <figure>
+                <img src="cvimages/cers3.png" alt="Web or promotional design sample from UCLA Center for European and Russian Studies" class="expandable">
+              </figure>
+              <figure>
+                <img src="cvimages/cers4.png" alt="Marketing or branding visual from UCLA Center for European and Russian Studies" class="expandable">
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- Office Manager -->
         <div class="resume-item">
           <div class="resume-date">2020 – 2023</div>
           <div>
             <div class="resume-role">Office Manager</div>
-            <div class="resume-org">Elite Educational Institution</div>
+            <div class="resume-org">
+              <a href="https://eliteprep.com/west-la" target="_blank" rel="noopener">
+                Elite Educational Institution
+              </a>
+            </div>
             <div class="resume-location">Westwood, CA</div>
           </div>
         </div>
@@ -127,39 +135,40 @@
     </section>
 
     <!-- ======================
-         PROJECTS (SINGLE CAMPAIGN)
+         PROJECTS
          ====================== -->
     <section id="projects">
       <h2>Marketing Campaign</h2>
 
       <p>
-        I developed the brand identity for Beehive Camping's online store, social media and marketing, amassing a following of over 200k followers under two years.
+        I developed the brand identity for Beehive Camping's online store, social media
+        and marketing, amassing a following of over 200k followers under two years.
       </p>
 
       <div class="campaign-gallery">
 
         <figure class="gallery-item">
-          <img src="images/pitchdeck.png" alt="Title pitch deck">
+          <img src="images/pitchdeck.png" alt="Title pitch deck" class="expandable">
           <figcaption>Pitch Deck</figcaption>
         </figure>
 
         <figure class="gallery-item wide">
-          <img src="images/website.png" alt="Campaign website layout">
+          <img src="images/website.png" alt="Campaign website layout" class="expandable">
           <figcaption>Online Store</figcaption>
         </figure>
 
         <figure class="gallery-item">
-          <img src="images/postcard600f.png" alt="Marketing postcard front">
+          <img src="images/postcard600f.png" alt="Marketing postcard front" class="expandable">
           <figcaption>Postcard (front)</figcaption>
         </figure>
 
         <figure class="gallery-item">
-          <img src="images/postcard600.png" alt="Marketing postcard back">
+          <img src="images/postcard600.png" alt="Marketing postcard back" class="expandable">
           <figcaption>Postcard (back)</figcaption>
         </figure>
-        
-          <figure class="gallery-item wide">
-          <img src="images/banner.png" alt="Yellow marketing banner for Drone 500 tent">
+
+        <figure class="gallery-item wide">
+          <img src="images/banner.png" alt="Yellow marketing banner for Drone 500 tent" class="expandable">
           <figcaption>Convention Banner</figcaption>
         </figure>
 
@@ -170,11 +179,52 @@
 
   <!-- Footer -->
   <footer>
-    <p>© Cate G.</p>
+    <p>© 2026 Cate G.</p>
   </footer>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close image">&times;</button>
+    <img class="lightbox-image" alt="">
+  </div>
+
+  <!-- Lightbox Script -->
+  <script>
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImg = document.querySelector('.lightbox-image');
+    const closeBtn = document.querySelector('.lightbox-close');
+
+    document.querySelectorAll('.expandable').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.setAttribute('aria-hidden', 'false');
+        closeBtn.focus();
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 
 </body>
 </html>
+
+
 
 
 
