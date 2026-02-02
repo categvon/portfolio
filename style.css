@@ -293,27 +293,25 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-/* --- Campaign Gallery (Refined) --- */
+/* --- Campaign Gallery (SMALL, CONTROLLED) --- */
 
 .campaign-gallery {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 2.5rem;
+  gap: 3rem;
   margin-top: 3rem;
 }
 
+/* Each item */
 .gallery-item {
-  grid-column: span 5;
-  max-width: 520px;
+  grid-column: span 4;
+  justify-self: center; /* centers the item */
 }
 
-.gallery-item.wide {
-  grid-column: span 10;
-  max-width: 100%;
-}
-
+/* Hard size limits */
 .gallery-item img {
   width: 100%;
+  max-width: 280px;   /* ← THIS is the real control */
   height: auto;
   display: block;
   border: 2px solid #000;
@@ -321,10 +319,12 @@ footer {
 
 /* Caption */
 .gallery-item figcaption {
-  margin-top: 0.75rem;
-  font-size: 0.9rem;
-  max-width: 60ch;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  text-align: center;
+  max-width: 280px;
 }
+
 
 
 
