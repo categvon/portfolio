@@ -489,4 +489,87 @@ footer {
   max-width: 100%;
 }
 
+/* =========================
+   TOOLKITS
+========================= */
+
+#toolkits {
+  margin-top: 4rem;
+}
+
+.toolkit-item {
+  margin-bottom: 3rem;
+}
+
+.toolkit-gallery {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.toolkit-gallery.two-up {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.toolkit-gallery img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+/* =========================
+   BUTTON GALLERY
+========================= */
+
+.button-gallery {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.button-gallery button {
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.4rem;
+  border: 2px solid #000;
+  background: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button-gallery button:hover,
+.button-gallery button:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 0 #000;
+}
+
+/* Visual distinction */
+.btn-secondary {
+  background: #f4f4f4;
+}
+
+.btn-tertiary {
+  border-style: dashed;
+}
+
+/* =========================
+   LIGHTBOX (SPOTLIGHT STYLE)
+========================= */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
 
