@@ -142,75 +142,57 @@
          Toolkits
          ====================== -->
 <section id="campaign-preview" class="section">
-  <h2>Marketing Campaign Assets</h2>
-
-  <p>
-    Hover or focus on an asset to preview it and read a description.
-  </p>
+  <h2>Campaign Assets</h2>
 
   <div class="preview-gallery">
-    <!-- Preview panel -->
-    <div class="preview-display" aria-live="polite">
-      <img
-        src="images/banner.png"
-        alt=""
-        id="preview-image"
-      />
-      <p id="preview-text">
-        Campaign banner used across digital and print placements.
-      </p>
+    <!-- Preview area -->
+    <div class="preview-display">
+      <div class="preview-item" id="preview-banner">
+        <img src="images/banner.png" alt="" />
+        <p>Primary campaign banner used across digital placements.</p>
+      </div>
+
+      <div class="preview-item" id="preview-pitchdeck">
+        <img src="images/pitchdeck.png" alt="" />
+        <p>Pitch deck designed for stakeholder presentations.</p>
+      </div>
+
+      <div class="preview-item" id="preview-website">
+        <img src="images/website.png" alt="" />
+        <p>Responsive campaign website emphasizing clarity and contrast.</p>
+      </div>
+
+      <div class="preview-item" id="preview-postcard-front">
+        <img src="images/postcard600.png" alt="" />
+        <p>Postcard front featuring campaign visual identity.</p>
+      </div>
+
+      <div class="preview-item" id="preview-postcard-back">
+        <img src="images/postcard600f.png" alt="" />
+        <p>Postcard back with accessible typography and layout.</p>
+      </div>
     </div>
 
     <!-- Thumbnails -->
-    <ul class="preview-thumbs">
+    <ul class="thumbnail-row">
       <li>
-        <button
-          data-image="images/banner.png"
-          data-text="Campaign banner used across digital and print placements."
-        >
-          Banner
-        </button>
+        <a href="#preview-banner">Banner</a>
       </li>
-
       <li>
-        <button
-          data-image="images/pitchdeck.png"
-          data-text="Pitch deck slides designed for stakeholder presentations."
-        >
-          Pitch Deck
-        </button>
+        <a href="#preview-pitchdeck">Pitch Deck</a>
       </li>
-
       <li>
-        <button
-          data-image="images/website.png"
-          data-text="Responsive campaign website design."
-        >
-          Website
-        </button>
+        <a href="#preview-website">Website</a>
       </li>
-
       <li>
-        <button
-          data-image="images/postcard600.png"
-          data-text="Front of printed campaign postcard."
-        >
-          Postcard (Front)
-        </button>
+        <a href="#preview-postcard-front">Postcard Front</a>
       </li>
-
       <li>
-        <button
-          data-image="images/postcard600f.png"
-          data-text="Back of printed campaign postcard with event details."
-        >
-          Postcard (Back)
-        </button>
+        <a href="#preview-postcard-back">Postcard Back</a>
       </li>
     </ul>
   </div>
 </section>
-
 
 
   <!-- Footer -->
@@ -220,6 +202,7 @@
 
 </body>
 </html>
+
 
 
 
