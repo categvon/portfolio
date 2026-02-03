@@ -399,5 +399,86 @@ footer {
     height: 260px;
   }
 }
+/* =========================
+   CAMPAIGN — STACKED, EDITORIAL
+========================= */
+
+.campaign-gallery {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+/* Stack behavior */
+.campaign-gallery .gallery-item {
+  position: relative;
+  margin-top: -120px; /* overlap */
+}
+
+.campaign-gallery .gallery-item:first-child {
+  margin-top: 0;
+}
+
+/* Image sizing — NORMAL, NOT GIANT */
+.campaign-gallery img {
+  height: 200px;        /* key scale fix */
+  max-width: 520px;
+  width: auto;
+  object-fit: contain;
+  border: 2px solid #000;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* Wide assets still slightly larger, but controlled */
+.campaign-gallery .wide img {
+  height: 260px;
+  max-width: 640px;
+}
+
+/* Subtle Joana-style tilt */
+.campaign-gallery .gallery-item:nth-child(1) img {
+  transform: rotate(-2deg);
+}
+.campaign-gallery .gallery-item:nth-child(2) img {
+  transform: rotate(1.5deg);
+}
+.campaign-gallery .gallery-item:nth-child(3) img {
+  transform: rotate(-1deg);
+}
+.campaign-gallery .gallery-item:nth-child(4) img {
+  transform: rotate(2deg);
+}
+.campaign-gallery .gallery-item:nth-child(5) img {
+  transform: rotate(-1.5deg);
+}
+
+/* Captions feel like notes */
+.campaign-gallery figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  opacity: 0.75;
+  text-align: center;
+}
+
+/* Mobile — reduce overlap */
+@media (max-width: 700px) {
+  .campaign-gallery .gallery-item {
+    margin-top: -60px;
+  }
+
+  .campaign-gallery img {
+    height: 170px;
+    max-width: 90%;
+  }
+
+  .campaign-gallery .wide img {
+    height: 210px;
+  }
+}
+
+
 
 
