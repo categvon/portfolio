@@ -291,6 +291,14 @@ footer {
   background: transparent;
   border-radius: 6px;
 }
+/* OVERRIDE thumbnail sizing when spotlighted */
+img.spotlight {
+  width: auto;
+  height: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
 
 /* =========================
    EXPANDABLE IMAGES
@@ -332,6 +340,7 @@ footer {
   opacity: 1;
   pointer-events: all;
 }
+
 
 
 
