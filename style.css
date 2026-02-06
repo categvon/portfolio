@@ -138,13 +138,13 @@ main {
 .experience-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.75rem;
-  margin-top: 0.75rem;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .experience-gallery img {
   width: 100%;
-  height: 210px;
+  height: 240px;
   object-fit: contain;
 }
 
@@ -156,19 +156,15 @@ main {
 }
 
 /* =========================
-   SPOTLIGHT (FIXED + SAFE)
+   SPOTLIGHT
 ========================= */
 img.spotlight {
   position: fixed !important;
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
-
   max-width: 90vw;
   max-height: 90vh;
-  width: auto;
-  height: auto;
-
   z-index: 2000;
   cursor: zoom-out;
 }
@@ -194,7 +190,7 @@ img.spotlight {
 #toolkits,
 .archive-block,
 .archive-intro {
-  background: transparent;
+  background: #ffffe6;
   border: none;
 }
 
@@ -206,7 +202,6 @@ img.spotlight {
   margin-top: 3rem;
 }
 
-/* prevent section spillover */
 .beehive-collage {
   height: 620px;
 }
@@ -215,12 +210,10 @@ img.spotlight {
   height: 360px;
 }
 
-/* collage items */
 .collage-item {
   position: absolute;
 }
 
-/* collage images — NO FRAMES */
 .collage-item img {
   width: 100%;
   height: auto;
@@ -248,39 +241,6 @@ img.spotlight {
 }
 
 /* =========================
-   COLLAGE POSITIONS — BEEHIVE
-========================= */
-.beehive-collage .item-1 {
-  top: 0;
-  left: 6%;
-  transform: rotate(-6deg);
-}
-
-.beehive-collage .item-2 {
-  top: 80px;
-  left: 36%;
-  transform: rotate(4deg);
-}
-
-.beehive-collage .item-3 {
-  top: 190px;
-  left: 10%;
-  transform: rotate(-2deg);
-}
-
-.beehive-collage .item-4 {
-  top: 230px;
-  left: 46%;
-  transform: rotate(5deg);
-}
-
-.beehive-collage .item-5 {
-  top: 420px;
-  left: 26%;
-  transform: rotate(-4deg);
-}
-
-/* =========================
    COLLAGE POSITIONS — TOOLKITS
 ========================= */
 .toolkits-collage .item-1 {
@@ -290,7 +250,7 @@ img.spotlight {
 }
 
 .toolkits-collage .item-2 {
-  top: 40px; /* moved up */
+  top: 10px;
   left: 44%;
   transform: rotate(3deg);
 }
@@ -303,9 +263,26 @@ img.spotlight {
 }
 
 /* =========================
-   MOBILE FALLBACK
+   MOBILE
 ========================= */
 @media (max-width: 700px) {
+
+  #about {
+    grid-template-columns: 1fr;
+  }
+
+  #about figure {
+    order: 2;
+  }
+
+  .experience-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .experience-gallery img {
+    height: 200px;
+  }
+
   .collage-gallery {
     height: auto;
   }
@@ -317,6 +294,8 @@ img.spotlight {
     margin-bottom: 1.5rem;
   }
 }
+
+
 
 
 
