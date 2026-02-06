@@ -579,3 +579,154 @@ footer {
     max-height: 85vh;
   }
 }
+/* =========================
+   COLLAGE — FINAL FIX
+========================= */
+
+/* ---------------------------------
+   COLLAGE CONTAINERS
+   (prevents spillover)
+---------------------------------- */
+.toolkits-collage {
+  position: relative;
+  height: 380px; /* enough for 2 large flyers */
+  margin-bottom: 3rem;
+}
+
+.beehive-collage {
+  position: relative;
+  height: 620px; /* enough for 5-item collage */
+}
+
+/* ---------------------------------
+   COLLAGE ITEMS (BASE)
+---------------------------------- */
+.collage-item {
+  position: absolute;
+}
+
+/* remove frames entirely */
+.collage-item img {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* ---------------------------------
+   SIZING
+---------------------------------- */
+
+/* flyers: large but contained */
+.toolkits-collage .collage-item {
+  width: 320px;
+}
+
+/* beehive: items 1–4 are large */
+.beehive-collage .item-1,
+.beehive-collage .item-2,
+.beehive-collage .item-3,
+.beehive-collage .item-4 {
+  width: 320px;
+}
+
+/* beehive item 5 is smaller */
+.beehive-collage .item-5 {
+  width: 200px;
+}
+
+/* ---------------------------------
+   POSITIONS — BEEHIVE
+---------------------------------- */
+.beehive-collage .item-1 {
+  top: 0;
+  left: 6%;
+  transform: rotate(-6deg);
+}
+
+.beehive-collage .item-2 {
+  top: 80px;
+  left: 36%;
+  transform: rotate(4deg);
+}
+
+.beehive-collage .item-3 {
+  top: 190px;
+  left: 10%;
+  transform: rotate(-2deg);
+}
+
+.beehive-collage .item-4 {
+  top: 230px;
+  left: 46%;
+  transform: rotate(5deg);
+}
+
+.beehive-collage .item-5 {
+  top: 420px;
+  left: 26%;
+  transform: rotate(-4deg);
+}
+
+/* ---------------------------------
+   POSITIONS — TOOLKITS
+---------------------------------- */
+.toolkits-collage .item-1 {
+  top: 0;
+  left: 10%;
+  transform: rotate(-4deg);
+}
+
+.toolkits-collage .item-2 {
+  top: 120px;
+  left: 42%;
+  transform: rotate(3deg);
+}
+
+/* ---------------------------------
+   SPOTLIGHT — HARD RESET
+---------------------------------- */
+
+/* when an image is spotlighted,
+   completely detach it from collage */
+.expandable.spotlight {
+  position: fixed !important;
+  inset: 0 !important;
+
+  margin: auto !important;
+  padding: 0 !important;
+
+  max-width: 90vw !important;
+  max-height: 90vh !important;
+
+  width: auto !important;
+  height: auto !important;
+
+  transform: none !important;
+  z-index: 1001;
+}
+
+/* ensure NO parent transform interferes */
+.expandable.spotlight {
+  will-change: auto;
+}
+
+/* ---------------------------------
+   MOBILE SAFETY
+---------------------------------- */
+@media (max-width: 700px) {
+  .toolkits-collage {
+    height: auto;
+  }
+
+  .beehive-collage {
+    height: auto;
+  }
+
+  .collage-item {
+    position: static;
+    transform: none !important;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+
