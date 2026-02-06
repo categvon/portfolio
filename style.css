@@ -150,20 +150,6 @@ main {
 }
 
 /* =========================
-   PROJECT GALLERIES
-========================= */
-.gallery-item img {
-  height: 180px;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-}
-
-.gallery-item.wide img {
-  height: 240px;
-}
-
-/* =========================
    CV IMAGE STRIP
 ========================= */
 .experience-gallery {
@@ -180,37 +166,44 @@ main {
 }
 
 /* =========================
-   EXPANDABLE (BASE)
+   EXPANDABLE BASE
 ========================= */
 .expandable {
   cursor: zoom-in;
 }
 
 /* =========================
-   SPOTLIGHT (ONLY RULE)
+   SPOTLIGHT (FIXED + SAFE)
 ========================= */
 img.spotlight {
   position: fixed !important;
-  inset: 0 !important;
-  margin: auto !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
 
   max-width: 90vw;
   max-height: 90vh;
-
   width: auto;
   height: auto;
 
-  transform: none !important;
   z-index: 2000;
-
   cursor: zoom-out;
 }
 
+/* backdrop logic restored */
 .spotlight-backdrop {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
   z-index: 1500;
+}
+
+.spotlight-backdrop.active {
+  opacity: 1;
+  pointer-events: all;
 }
 
 /* =========================
@@ -221,7 +214,7 @@ img.spotlight {
   margin-top: 3rem;
 }
 
-/* container heights prevent spillover */
+/* prevent section spillover */
 .beehive-collage {
   height: 620px;
 }
@@ -242,11 +235,6 @@ img.spotlight {
   border: none;
   background: transparent;
   box-shadow: none;
-}
-
-/* neutralize rotation when spotlighted */
-.collage-item:has(img.spotlight) {
-  transform: none !important;
 }
 
 /* =========================
@@ -330,3 +318,5 @@ img.spotlight {
     margin-bottom: 1.5rem;
   }
 }
+
+
