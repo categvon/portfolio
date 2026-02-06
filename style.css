@@ -120,30 +120,11 @@ main {
   display: grid;
   grid-template-columns: 1fr 260px;
   gap: 2rem;
-  align-items: start;
 }
 
 #about img {
   width: 100%;
   height: auto;
-}
-
-/* =========================
-   EXPERIENCE / LIST SECTIONS
-========================= */
-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-section li {
-  margin-bottom: 1.25rem;
-}
-
-section li span {
-  display: inline-block;
-  min-width: 7rem;
-  font-size: 0.9rem;
 }
 
 /* =========================
@@ -162,116 +143,28 @@ section li span {
 
 .resume-date {
   white-space: nowrap;
-  font-size: 0.95rem;
 }
 
 .resume-role {
   font-weight: 700;
 }
 
-.resume-location {
-  font-size: 0.85rem;
-}
-
-.resume-org::after {
-  content: "↗";
-  font-size: 0.75em;
-  margin-left: 0.25em;
-  transition: transform 0.2s ease;
-}
-
-.resume-org:hover::after {
-  transform: translate(3px, -3px);
-}
-
 /* =========================
-   FOOTER
+   PROJECT GALLERIES
 ========================= */
-footer {
-  margin-top: 4rem;
-  padding: 2rem 1.5rem;
-  font-size: 0.75rem;
-  text-align: center;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 720px) {
-  body {
-    font-size: 18px;
-  }
-
-  #about {
-    grid-template-columns: 1fr;
-  }
-
-  nav ul {
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .resume-item {
-    grid-template-columns: 1fr;
-    row-gap: 0.25rem;
-  }
-}
-
-/* =========================
-   PROJECTS / CAMPAIGN
-   (SCALED DOWN – FIXED)
-========================= */
-#projects {
-  margin-top: 4rem;
-}
-
-.campaign-gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  margin-top: 3rem;
-}
-
-.gallery-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* ↓↓↓ SIZE FIX HERE ↓↓↓ */
 .gallery-item img {
-  height: 180px;              /* smaller */
+  height: 180px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
-  border: 2px solid #000;
-  background: #fff;
 }
 
 .gallery-item.wide img {
   height: 240px;
 }
 
-.gallery-item figcaption {
-  margin-top: 0.75rem;
-  font-size: 0.85rem;
-  text-align: center;
-  max-width: 640px;
-}
-
-@media (max-width: 700px) {
-  .gallery-item img {
-    height: 150px;
-  }
-
-  .gallery-item.wide img {
-    height: 200px;
-  }
-}
-
 /* =========================
    CV IMAGE STRIP
-   (RESTORED — NO CROPPING)
 ========================= */
 .experience-gallery {
   display: grid;
@@ -280,348 +173,85 @@ footer {
   margin-top: 0.75rem;
 }
 
-.experience-gallery figure {
-  margin: 0;
-}
-
 .experience-gallery img {
   width: 100%;
   height: 140px;
   object-fit: contain;
-  background: transparent;
-  border-radius: 6px;
 }
 
 /* =========================
-   EXPANDABLE IMAGES
+   EXPANDABLE (BASE)
 ========================= */
 .expandable {
   cursor: zoom-in;
-  transition: transform 0.2s ease;
-}
-
-.expandable:hover {
-  transform: scale(1.03);
 }
 
 /* =========================
-   SPOTLIGHT
+   SPOTLIGHT (ONLY RULE)
 ========================= */
-.expandable.spotlight {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+img.spotlight {
+  position: fixed !important;
+  inset: 0 !important;
+  margin: auto !important;
+
   max-width: 90vw;
   max-height: 90vh;
-  z-index: 1001;
+
+  width: auto;
+  height: auto;
+
+  transform: none !important;
+  z-index: 2000;
+
   cursor: zoom-out;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 .spotlight-backdrop {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.55);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  z-index: 1500;
 }
 
-.spotlight-backdrop.active {
-  opacity: 1;
-  pointer-events: all;
-}
 /* =========================
-   SPOTLIGHT OVERRIDES
-========================= */
-.expandable.spotlight {
-  width: auto;
-  height: auto;
-  max-width: 90vw;
-  max-height: 90vh;
-  object-fit: contain;
-}
-/* =========================
-   ARCHIVE / EDITORIAL GRID
-========================= */
-.archive-hoard {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1.25rem;
-  margin-top: 2rem;
-}
-
-.archive-asset {
-  margin: 0;
-}
-
-/* size variants */
-.archive-asset.narrow {
-  grid-column: span 3;
-}
-
-.archive-asset.medium {
-  grid-column: span 4;
-}
-
-.archive-asset.wide {
-  grid-column: span 6;
-}
-
-/* image sizing */
-.archive-asset img {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-  background: #fff;
-  border: 2px solid #000;
-}
-
-/* captions */
-.archive-asset figcaption {
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
-  text-align: left;
-}
-
-/* responsive */
-@media (max-width: 900px) {
-  .archive-hoard {
-    grid-template-columns: repeat(6, 1fr);
-  }
-
-  .archive-asset.narrow,
-  .archive-asset.medium {
-    grid-column: span 3;
-  }
-
-  .archive-asset.wide {
-    grid-column: span 6;
-  }
-}
-
-@media (max-width: 600px) {
-  .archive-hoard {
-    grid-template-columns: 1fr;
-  }
-
-  .archive-asset img {
-    height: auto;
-  }
-}
-/* =========================
-   COLLAGE GALLERY (STATIC SPOTLIGHT)
+   COLLAGE GALLERIES
 ========================= */
 .collage-gallery {
   position: relative;
   margin-top: 3rem;
 }
 
+/* container heights prevent spillover */
 .beehive-collage {
-  height: 520px;
+  height: 620px;
 }
 
 .toolkits-collage {
-  height: 320px;
+  height: 360px;
 }
 
+/* collage items */
 .collage-item {
   position: absolute;
-  width: 220px;
 }
 
+/* collage images — NO FRAMES */
 .collage-item img {
   width: 100%;
   height: auto;
-  background: #fff;
-  border: 2px solid #000;
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
-  cursor: zoom-in;
+  border: none;
+  background: transparent;
+  box-shadow: none;
 }
 
-/* disable motion entirely for spotlight */
-.collage-item img:hover,
-.collage-item img.spotlight {
+/* neutralize rotation when spotlighted */
+.collage-item:has(img.spotlight) {
   transform: none !important;
 }
 
-/* -------------------------
-   BEEHIVE POSITIONS (5)
-------------------------- */
-.beehive-collage .item-1 {
-  top: 0;
-  left: 6%;
-  transform: rotate(-6deg);
-}
-
-.beehive-collage .item-2 {
-  top: 70px;
-  left: 34%;
-  transform: rotate(4deg);
-}
-
-.beehive-collage .item-3 {
-  top: 160px;
-  left: 12%;
-  transform: rotate(-2deg);
-}
-
-.beehive-collage .item-4 {
-  top: 200px;
-  left: 44%;
-  transform: rotate(5deg);
-}
-
-.beehive-collage .item-5 {
-  top: 320px;
-  left: 24%;
-  transform: rotate(-4deg);
-}
-
-/* -------------------------
-   TOOLKITS POSITIONS (2)
-------------------------- */
-.toolkits-collage .item-1 {
-  top: 0;
-  left: 12%;
-  transform: rotate(-4deg);
-}
-
-.toolkits-collage .item-2 {
-  top: 90px;
-  left: 38%;
-  transform: rotate(3deg);
-}
-
-/* -------------------------
-   MOBILE FALLBACK
-------------------------- */
-@media (max-width: 700px) {
-  .collage-gallery {
-    height: auto;
-  }
-
-  .collage-item {
-    position: static;
-    width: 100%;
-    margin-bottom: 1.5rem;
-    transform: none !important;
-  }
-}
-
 /* =========================
-   COLLAGE OVERRIDES — FINAL
-========================= */
-
-/* remove frames entirely */
-.collage-item img {
-  border: none;
-  background: transparent;
-  box-shadow: none;
-}
-
-/* ---------------------------------
    COLLAGE SIZING
----------------------------------- */
-
-/* default collage size (flyers doubled) */
-.toolkits-collage .collage-item {
-  width: 440px;
-}
-
-/* beehive: items 1–4 are 2× size */
-.beehive-collage .item-1,
-.beehive-collage .item-2,
-.beehive-collage .item-3,
-.beehive-collage .item-4 {
-  width: 440px;
-}
-
-/* item 5 stays smaller for balance */
-.beehive-collage .item-5 {
-  width: 220px;
-}
-
-/* ---------------------------------
-   SPOTLIGHT — COLLAGE SAFE MODE
----------------------------------- */
-
-/* when a collage image is spotlighted,
-   remove ALL transforms and positioning influence */
-.collage-item img.spotlight {
-  position: fixed !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-
-  max-width: 90vw;
-  max-height: 90vh;
-
-  width: auto;
-  height: auto;
-
-  z-index: 1001;
-  cursor: zoom-out;
-}
-
-/* ensure parent transforms do NOT interfere */
-.collage-item {
-  transform: none;
-}
-
-/* ---------------------------------
-   MOBILE SAFETY
----------------------------------- */
-@media (max-width: 700px) {
-  .collage-item img.spotlight {
-    max-width: 95vw;
-    max-height: 85vh;
-  }
-}
-/* =========================
-   COLLAGE — FINAL FIX
 ========================= */
-
-/* ---------------------------------
-   COLLAGE CONTAINERS
-   (prevents spillover)
----------------------------------- */
-.toolkits-collage {
-  position: relative;
-  height: 380px; /* enough for 2 large flyers */
-  margin-bottom: 3rem;
-}
-
-.beehive-collage {
-  position: relative;
-  height: 620px; /* enough for 5-item collage */
-}
-
-/* ---------------------------------
-   COLLAGE ITEMS (BASE)
----------------------------------- */
-.collage-item {
-  position: absolute;
-}
-
-/* remove frames entirely */
-.collage-item img {
-  border: none;
-  background: transparent;
-  box-shadow: none;
-}
-
-/* ---------------------------------
-   SIZING
----------------------------------- */
-
-/* flyers: large but contained */
-.toolkits-collage .collage-item {
-  width: 320px;
-}
-
-/* beehive: items 1–4 are large */
 .beehive-collage .item-1,
 .beehive-collage .item-2,
 .beehive-collage .item-3,
@@ -629,14 +259,17 @@ footer {
   width: 320px;
 }
 
-/* beehive item 5 is smaller */
 .beehive-collage .item-5 {
   width: 200px;
 }
 
-/* ---------------------------------
-   POSITIONS — BEEHIVE
----------------------------------- */
+.toolkits-collage .collage-item {
+  width: 320px;
+}
+
+/* =========================
+   COLLAGE POSITIONS — BEEHIVE
+========================= */
 .beehive-collage .item-1 {
   top: 0;
   left: 6%;
@@ -667,66 +300,33 @@ footer {
   transform: rotate(-4deg);
 }
 
-/* ---------------------------------
-   POSITIONS — TOOLKITS
----------------------------------- */
+/* =========================
+   COLLAGE POSITIONS — TOOLKITS
+========================= */
 .toolkits-collage .item-1 {
   top: 0;
-  left: 10%;
+  left: 12%;
   transform: rotate(-4deg);
 }
 
 .toolkits-collage .item-2 {
   top: 120px;
-  left: 42%;
+  left: 44%;
   transform: rotate(3deg);
 }
 
-/* ---------------------------------
-   SPOTLIGHT — HARD RESET
----------------------------------- */
-
-/* when an image is spotlighted,
-   completely detach it from collage */
-.expandable.spotlight {
-  position: fixed !important;
-  inset: 0 !important;
-
-  margin: auto !important;
-  padding: 0 !important;
-
-  max-width: 90vw !important;
-  max-height: 90vh !important;
-
-  width: auto !important;
-  height: auto !important;
-
-  transform: none !important;
-  z-index: 1001;
-}
-
-/* ensure NO parent transform interferes */
-.expandable.spotlight {
-  will-change: auto;
-}
-
-/* ---------------------------------
-   MOBILE SAFETY
----------------------------------- */
+/* =========================
+   MOBILE FALLBACK
+========================= */
 @media (max-width: 700px) {
-  .toolkits-collage {
-    height: auto;
-  }
-
-  .beehive-collage {
+  .collage-gallery {
     height: auto;
   }
 
   .collage-item {
     position: static;
-    transform: none !important;
     width: 100%;
+    transform: none !important;
     margin-bottom: 1.5rem;
   }
 }
-
