@@ -92,6 +92,7 @@ nav a {
 footer {
   background: #fff;
   border-top: 3px solid #8FB8ED;
+   width: 100%;
 }
 
 footer nav ul {
@@ -399,6 +400,7 @@ img.spotlight {
   grid-template-columns: repeat(2, 1fr);
 }
 }
+
 
 
 
