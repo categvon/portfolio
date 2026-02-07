@@ -372,12 +372,8 @@ img.spotlight {
 .experience-gallery {
   grid-template-columns: repeat(2, 1fr);
 }
-
-.experience-gallery img {
-  height: 180px;
 }
 
-}
 
 
 
