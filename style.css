@@ -57,7 +57,7 @@ h1 {
 
 h2 {
   font-size: 1.4rem;
-  margin-top: 1.5rem;   
+  margin-top: 0.5rem;   
   margin-bottom: 0.75rem;
 }
 
@@ -373,6 +373,7 @@ img.spotlight {
   grid-template-columns: repeat(2, 1fr);
 }
 }
+
 
 
 
