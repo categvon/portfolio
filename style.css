@@ -311,6 +311,22 @@ img.spotlight {
    MOBILE FALLBACK
 ========================= */
 @media (max-width: 700px) {
+
+  /* REAL FIX: prevent layout overflow and zoomed-in default */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  header {
+    width: 100%;
+  }
+
   .collage-gallery {
     height: auto;
   }
@@ -337,10 +353,6 @@ img.spotlight {
   }
 
   /* HEADER: full-width feel on mobile */
-  header {
-    width: 100%;
-  }
-
   nav ul {
     padding-left: 1rem;
     padding-right: 1rem;
